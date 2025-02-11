@@ -15,6 +15,7 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem "dotenv-rails"
+gem "cloudinary"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
