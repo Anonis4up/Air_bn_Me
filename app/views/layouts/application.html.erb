@@ -11,12 +11,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <%= render "shared/navbar" %>
     <%= yield %>
-    <% if user_signed_in? %>
-      <%= current_user.email %>
-      <%= button_to "se deconnecter", destroy_user_session_path, method: :delete %>
-    <% end %>
+    <%= render "shared/flashes" %>
   </body>
 </html>
