@@ -1,12 +1,26 @@
-<H1>All our bikes</H1>
+<H1>Tous nos wagons</H1>
 <div>
   <ul>
   <% @bikes.each do |bike| %>
     <li class="card" heigth=400px >
+      <div class="btn btn-warning">
+       <%= link_to "Voir ce wagon", bike_path(bike) %>
+      </div>
       <%= bike.brand %>
+      <p> Catégorie :
+        <%= bike.category %>
+
+      </p>
       <img src="<%= bike.poster_url %>", alt= "un velo", width=100px>
-      <%= bike.user.first_name %>
+      <p>
+      <%= bike.price_per_day %>€ par jour
+      </p>
+      <p>posté par: <%= bike.user.first_name %> </p>
+
     </li>
   <% end %>
   </ul>
+
+    <%= link_to "Loue ton wagon", new_bike_path %>
+  <H1></H1>
 </div>

@@ -1,3 +1,23 @@
-<H1> The Bike </H1>
+<H1> Réserve un vélo - <%= @bike.brand %> proposé par <%= @bike.user.first_name %> </H1>
+<H3> Pour <%= @bike.price_per_day  %>€ par jour</H3>
 
-<%= @bike.brand %>
+
+      <img src="<%= @bike.poster_url %>", alt= "un velo", width=400px>
+      <p>
+      <H4> Catégorie :
+        <%= @bike.category %>
+      </H4>
+      </p>
+
+    <%= form_with model: @reservation, url:bike_reservations_path(@bike) do |f| %>
+      <%= f.label :start_date, "Date de début" %>
+      <%= f.date_select :start_date %>
+
+       <%= f.label :end_date, "Date de fin" %>
+      <%= f.date_select :end_date %>
+
+      <%= f.submit "Réserver", class:' btn btn-primary' %>
+    <% end %>
+
+    <p><%= link_to "Revenir à la liste des wagons", bikes_path %></p>
+<div class="card"></div>

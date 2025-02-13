@@ -34,7 +34,8 @@ User.destroy_all
     price_per_day: 70,
     user: user_1,
     poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg"
-  )
+    location:user_1.location
+    )
 
   Bike.create!(
     brand: "Peugeot",
