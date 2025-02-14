@@ -16,8 +16,9 @@ end
 
 def create
   @bike=current_user.bikes.build(bike_params)
+
   if @bike.save
-    redirect_to bikes_path, notice: "Votre vélo est ajouté"
+    redirect_to bikes_path, notice: "Votre wagon est ajouté"
   else
     render :new
   end
@@ -26,6 +27,6 @@ end
 private
 def bike_params
 
-  params.require(:bike).permit(:brand, :category, :price_per_day, :location)
+  params.require(:bike).permit(:brand, :category, :price_per_day, :location, :photo)
 end
 end

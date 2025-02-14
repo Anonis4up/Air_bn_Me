@@ -2,19 +2,33 @@
 <H3> Pour <%= @bike.price_per_day  %>€ par jour</H3>
 
 
-      <img src="<%= @bike.poster_url %>", alt= "un velo", width=400px>
+      <img src="<%= @bike.poster_url %>", alt= "un wagon", width=400px>
       <p>
       <H4> Catégorie :
         <%= @bike.category %>
       </H4>
       </p>
 
-    <%= form_with model: @reservation, url:bike_reservations_path(@bike) do |f| %>
+ <%= form_with model: @reservation, url:bike_reservations_path(@bike) do |f| %>
       <%= f.label :start_date, "Date de début" %>
       <%= f.date_select :start_date %>
 
        <%= f.label :end_date, "Date de fin" %>
       <%= f.date_select :end_date %>
+
+      <%= f.submit "Réserver", class:' btn btn-primary' %>
+    <% end %>
+
+<%= simple_form_for @reservation do |f| %>
+  <%= f.label :date_de_début %>
+  <%= f.text_field :start_date,
+        data: { controller: "flatpickr", flatpickr_target: "start_date"} %>
+  <%= f.submit %>
+<% end %>
+
+    <%= simple_form_for @reservation, url:bike_reservations_path(@bike) do |f| %>
+      <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
 
       <%= f.submit "Réserver", class:' btn btn-primary' %>
     <% end %>
