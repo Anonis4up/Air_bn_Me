@@ -10,7 +10,7 @@ class Reservation < ApplicationRecord
     (end_date - start_date).to_i + 1
   end
 
-  def total_price(price_per_day)
+  def total_price
     total_days * bike.price_per_day
   end
 end
