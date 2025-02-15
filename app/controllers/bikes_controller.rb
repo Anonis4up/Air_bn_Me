@@ -8,10 +8,12 @@ end
 def show
   @bike = Bike.find(params[:id])
   @reservation = Reservation.new
+
   @markers = [{
     lat: @bike.latitude,
     lng: @bike.longitude
   }]
+
 end
 
 def new
