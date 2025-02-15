@@ -2,12 +2,19 @@ class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show]
 
 def index
-@bikes = Bike.all
+  @bikes = Bike.all
+
+  @markers = @bikes.geocoded.map do |bike|
+    {
+      lat: bike.latitude,
+      lng: bike.longitude
+    }
+  end
 end
 
 def show
-@bike = Bike.find(params[:id])
-@reservation = Reservation.new
+  @bike = Bike.find(params[:id])
+  @reservation = Reservation.new
 end
 
 def new
@@ -25,8 +32,8 @@ def create
 end
 
 private
-def bike_params
 
-  params.require(:bike).permit(:brand, :category, :price_per_day, :location, :photo)
-end
+  def bike_params
+    params.require(:bike).permit(:brand, :category, :price_per_day, :location, :photo)
+  end
 end
