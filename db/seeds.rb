@@ -17,9 +17,8 @@ user_1 = User.create!(
   first_name: "Jean",
   last_name: "Jeanjean",
   phone_number: "0606060606",
-  address: "4 rue de Jean 69690 Jeanjeanvilliers",
-  password: "123456",
-  location: "75003",
+  address: "85 Quai d'Austerlitz, 75013 Paris",
+  password: "123456"
 )
 
 user_2 = User.create!(
@@ -27,9 +26,8 @@ user_2 = User.create!(
   first_name: "Jean",
   last_name: "Jeanjeanne",
   phone_number: "0606060606",
-  address: "4 rue de Jean 69690 Jeanjeanvilliers",
-  password: "123456",
-  location: "75016",
+  address: "5 Pl. du 8 Mai 1945, 92300 Levallois-Perret",
+  password: "123456"
 )
 
 Bike.create!(
@@ -38,7 +36,7 @@ Bike.create!(
   price_per_day: 70,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
-  location: user_1.location,
+  location: user_1.address
 )
 
 Bike.create!(
@@ -47,7 +45,7 @@ Bike.create!(
   price_per_day: 70,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
-  location: user_2.location,
+  location: user_2.address
 )
 
 Bike.create!(
@@ -56,8 +54,7 @@ Bike.create!(
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg",
-  location: user_2.location,
-
+  location: user_2.address
 )
 
 Bike.create!(
@@ -66,8 +63,7 @@ Bike.create!(
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
-  location: user_2.location,
-
+  location: user_2.address
 )
 
 Bike.create!(
@@ -76,8 +72,7 @@ Bike.create!(
   price_per_day: 100,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
-  location: user_1.location,
-
+  location: user_1.address
 )
 
 Bike.create!(
@@ -86,8 +81,7 @@ Bike.create!(
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg",
-  location: user_2.location,
-
+  location: user_2.address
 )
 
 Bike.create!(
@@ -96,8 +90,7 @@ Bike.create!(
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg",
-  location: user_2.location,
-
+  location: user_2.address
 )
 
 Bike.create!(
@@ -106,7 +99,7 @@ Bike.create!(
   price_per_day: 150,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg",
-  location: user_1.location,
+  location: user_1.address
 )
 
 Bike.create!(
@@ -115,8 +108,7 @@ Bike.create!(
   price_per_day: 50,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
-  location: user_2.location,
-
+  location: user_2.address
 )
 
 bike = Bike.create!(
@@ -125,12 +117,12 @@ bike = Bike.create!(
   price_per_day: 140,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
-  location: user_1.location,
+  location: user_1.address
 )
 
 Reservation.create(
   start_date: Date.today,
   end_date: Date.today + 1,
   bike_id: bike.id,
-  user_id: user_1.id,
+  user_id: user_1.id
 )
