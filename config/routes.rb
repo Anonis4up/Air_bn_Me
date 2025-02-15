@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :bikes, only: [:index, :show, :new, :create] do
     resources :reservations, only: [:new, :create]
+    resources :bookmarks, only: [:new, :create, :show]
   end
-  resources :reservations, only: [:index, :destroy, :create]
+  resources :reservations, only: [:index, :destroy]
 
   root to: "bikes#index"
   # Defines the root path route ("/")

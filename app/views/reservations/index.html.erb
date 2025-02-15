@@ -1,8 +1,17 @@
 <h1>Réservations</h1>
-<% if @reservation %>
+<% if @reservations.any? %>
+  <p> Vous avez réservé
+    <%= @reservations.last.bike.brand %> du
+    <%= @reservations.last.start_date %> au
+    <%= @reservations.last.end_date %>. Ce vélo vous est mis à disposition par
+    <%= @reservations.last.bike.user.first_name %>
+    <img src="<%= @reservations.last.bike.poster_url %>" alt="un vélo" width="100px">
+  </p>
 
-  <%= @reservation %>
+  <p>
+    Prix total : <%= @reservations.last.total_price %> € pour <%= @reservations.last.total_days %> jours
+  </p>
 
 <% else %>
-  <p>No reservation found</p>
+  <p>Aucune réservation trouvée.</p>
 <% end %>

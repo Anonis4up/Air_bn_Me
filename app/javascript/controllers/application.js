@@ -1,6 +1,5 @@
 import { Application } from "@hotwired/stimulus"
-import flatpickr from "flatpickr";
-import 'flatpickr/dist/flatpickr.min.css';
+
 
 const application = Application.start()
 

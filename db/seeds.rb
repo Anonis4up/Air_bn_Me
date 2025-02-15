@@ -17,7 +17,7 @@ user_1 = User.create!(
   first_name: "Jean",
   last_name: "Jeanjean",
   phone_number: "0606060606",
-  address: "85 Quai d'Austerlitz, 75013 Paris",
+  address: "85 Quai d'Austerlitz 75013 Paris",
   password: "123456"
 )
 
@@ -26,7 +26,7 @@ user_2 = User.create!(
   first_name: "Jean",
   last_name: "Jeanjeanne",
   phone_number: "0606060606",
-  address: "5 Pl. du 8 Mai 1945, 92300 Levallois-Perret",
+  address: "5 Pl. du 8 Mai 1945 92300 Levallois-Perret",
   password: "123456"
 )
 

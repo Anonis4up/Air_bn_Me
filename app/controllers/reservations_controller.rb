@@ -3,8 +3,8 @@ class ReservationsController < ApplicationController
   before_action :set_bike, only: :create
 
   def index
-    @reservation=current_user.reservations
-    @reservations=@reservation.all
+    @reservation = current_user.reservations
+    @reservations = @reservation.all
 
 
   end
@@ -16,14 +16,16 @@ class ReservationsController < ApplicationController
 
   def create
     @bike = Bike.find(params[:bike_id])
-    @reservation = current_user.reservations.build(reservation_params)
+    @reservation = Reservation.new(reservation_params)
+    @reservation.user = current_user
     @reservation.bike = @bike
 
     if @reservation.save
 
-      redirect_to reservations_path, notice: 'Réservation réussie.'
+      total_price = @reservation.total_price
+      redirect_to reservations_path, notice: "Réservation réussie. Prix total : #{total_price} €"
     else
-      render :new
+      render "bikes/show"
     end
   end
 
@@ -52,7 +54,11 @@ class ReservationsController < ApplicationController
     end
 
     def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date, :bike_id)
+      params.require(:reservation).permit(:start_date, :end_date)
     end
+
+
+
+
 
 end
