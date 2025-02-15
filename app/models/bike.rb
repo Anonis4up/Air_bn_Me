@@ -11,4 +11,5 @@ class Bike < ApplicationRecord
   after_validation :geocode
 
   validates :brand, :price_per_day, :location, presence: true
+
 end
