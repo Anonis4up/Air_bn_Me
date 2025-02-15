@@ -3,19 +3,47 @@ class ReservationsController < ApplicationController
   before_action :set_bike, only: :create
 
   def index
-    @resservations=current_user.reservations
+    @reservation=current_user.reservations
+    @reservations=@reservation.all
+
+
+  end
+
+  def new
+    @bike = Bike.find(params[:bike_id])
+    @reservation = Reservation.new
   end
 
   def create
-    @reservation=current_user.reservations.build(reservation_params)
-    @reservation.bike=@bike
+    @bike = Bike.find(params[:bike_id])
+    @reservation = current_user.reservations.build(reservation_params)
+    @reservation.bike = @bike
 
     if @reservation.save
-      redirect_to reservations_path, notice: "Votre réservation est effectuée"
+
+      redirect_to reservations_path, notice: 'Réservation réussie.'
     else
-      render "bikes/show", notice: "Votre réservation n'a pas pu être effectuée"
+      render :new
     end
   end
+
+  #   def create
+  #   @reservation=current_user.reservations.build(reservation_params)
+  #   @reservation.bike=@bike
+
+  #   if @reservation.start_date > @reservation.end_date
+  # raise
+  # flash[:alert] = "La date de fin ne peut pas être avant la date de début"
+  #     render :new
+  #   else
+
+  #   if @reservation.save
+  #     redirect_to reservations_path, notice: "Votre réservation est effectuée"
+  #   else
+  #     render "bikes/show", notice: "Votre réservation n'a pas pu être effectuée"
+  #   end
+  # end
+  # end
 
   private
 
@@ -24,7 +52,7 @@ class ReservationsController < ApplicationController
     end
 
     def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date)
+      params.require(:reservation).permit(:start_date, :end_date, :bike_id)
     end
 
 end

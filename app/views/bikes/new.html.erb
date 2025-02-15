@@ -2,8 +2,23 @@
 
 <p> Afin de pouvoir mettre ton wagon en location, il te suffit de compléter les champs ci dessous et de cliquer sur "VALIDER" </p>
 
+<%= simple_form_for @bike do |f| %>
+  <%= f.label :Nom %>
+  <%= f.text_field :brand %>
+  <%= f.label :Categorie %>
+  <%= f.text_field :category %>
+  <%= f.label :Prix_par_jour %>
+  <%= f.text_field :price_per_day %>
+  <%= f.label :Code_postal %>
+  <%= f.text_field :location %>
+  <%= f.input :photo, as: :file %>
+
+
+  <%= f.submit "Valider", class: "btn btn-primary" %>
+
+
+<% end %>
 
 
 
-
-    <p><%= link_to "Revenir à la liste des wagons", bikes_path %></p>
+<p><%= link_to "Revenir à la liste des wagons", bikes_path %></p>

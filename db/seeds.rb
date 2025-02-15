@@ -16,7 +16,8 @@ User.destroy_all
       last_name: "Jeanjean",
       phone_number: "0606060606",
       address: "4 rue de Jean 69690 Jeanjeanvilliers",
-      password: "123456"
+      password: "123456",
+      location: "75003"
     )
 
   user_2 = User.create!(
@@ -25,16 +26,24 @@ User.destroy_all
     last_name: "Jeanjeanne",
     phone_number: "0606060606",
     address: "4 rue de Jean 69690 Jeanjeanvilliers",
-    password: "123456"
+    password: "123456",
+    location: "75016"
     )
+  Reservation.create
+  start_date: 2025 02 20
+  end_date: 2025 02 26
+  accepted: nil
+  bike_id: 93
+  user_id: user_1.id
+
 
   Bike.create!(
     brand: "Shimano",
     category: "VTT",
     price_per_day: 70,
     user: user_1,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg"
-    location:user_1.location
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
+    location: user_1.location
     )
 
   Bike.create!(
@@ -42,15 +51,17 @@ User.destroy_all
     category: "VTT",
     price_per_day: 70,
     user: user_2,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg"
-  )
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
+    location: user_2.location
+    )
 
   Bike.create!(
     brand: "Canyon",
     category: "Velo de course",
     price_per_day: 120,
     user: user_2,
-    poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg"
+    poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg",
+    location: user_2.location
 
   )
 
@@ -59,7 +70,8 @@ User.destroy_all
     category: "VTT",
     price_per_day: 120,
     user: user_2,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg"
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
+    location: user_2.location
 
   )
 
@@ -69,8 +81,10 @@ User.destroy_all
     category: "velo de campagne",
     price_per_day: 100,
     user: user_1,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg"
-  )
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
+    location: user_1.location
+
+    )
 
 
   Bike.create!(
@@ -78,7 +92,8 @@ User.destroy_all
     category: "Velo de course",
     price_per_day: 120,
     user: user_2,
-    poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg"
+    poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg",
+    location: user_2.location
 
   )
 
@@ -88,7 +103,8 @@ User.destroy_all
     category: "Velo electrique",
     price_per_day: 120,
     user: user_2,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg"
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg",
+    location: user_2.location
 
   )
 
@@ -98,8 +114,8 @@ User.destroy_all
     category: "Velo electrique",
     price_per_day: 150,
     user: user_1,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg"
-
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg",
+    location: user_1.location
   )
 
 
@@ -108,7 +124,8 @@ User.destroy_all
     category: "velo de campagne",
     price_per_day: 50,
     user: user_2,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg"
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
+    location: user_2.location
 
   )
 
@@ -118,6 +135,6 @@ User.destroy_all
     category: "velo de campagne",
     price_per_day: 140,
     user: user_1,
-    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg"
-
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
+    location: user_1.location
   )
