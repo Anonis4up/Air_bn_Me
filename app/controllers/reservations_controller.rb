@@ -19,6 +19,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.bike = @bike
+
     if @reservation.save
 
       redirect_to reservations_path, notice: 'Réservation réussie.'
@@ -54,5 +55,9 @@ class ReservationsController < ApplicationController
     def reservation_params
       params.require(:reservation).permit(:start_date, :end_date)
     end
+
+
+
+
 
 end

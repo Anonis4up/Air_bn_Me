@@ -17,7 +17,7 @@ gem 'devise', '~> 4.9', '>= 4.9.4'
 gem "dotenv-rails"
 gem "cloudinary"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+gem "importmap-rails", "~> 1.2.3"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
