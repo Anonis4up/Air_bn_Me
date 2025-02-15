@@ -9,8 +9,9 @@
   </p>
 
   <p>
-    Prix total : <%= @reservations.last.total_price %> €
+    Prix total : <%= @reservations.last.total_price %> € pour <%= @reservations.last.total_days %> jours
   </p>
+
 <% else %>
   <p>Aucune réservation trouvée.</p>
 <% end %>
