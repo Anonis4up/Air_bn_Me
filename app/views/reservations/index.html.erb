@@ -1,7 +1,12 @@
 <h1>Réservations</h1>
 <% if @reservation %>
+<p> Vous avez réservé
+  <%= @reservations.first.bike.brand %> du
+  <%= @reservations.first.start_date %> au
+  <%= @reservations.first.end_date %>. Ce wagon vous est mis à disposition par
+  <%= @reservations.first.bike.user.first_name %>
 
-  <%= @reservation %>
+</p>
 
 <% else %>
   <p>No reservation found</p>

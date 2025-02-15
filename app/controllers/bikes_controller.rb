@@ -6,8 +6,8 @@ def index
 end
 
 def show
-@bike = Bike.find(params[:id])
-@reservation = Reservation.new
+  @bike = Bike.find(params[:id])
+  @reservation = Reservation.new
 end
 
 def new
