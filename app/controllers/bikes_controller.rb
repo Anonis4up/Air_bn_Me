@@ -14,6 +14,7 @@ end
 def show
   @bike = Bike.find(params[:id])
   @reservation = Reservation.new
+  @bookmark = Bookmark.new
 end
 
 def new
