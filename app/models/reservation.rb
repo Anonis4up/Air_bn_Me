@@ -7,12 +7,10 @@ class Reservation < ApplicationRecord
 
 
   def total_days
-    (end_date - start_date).to_i
+    (end_date - start_date).to_i + 1
   end
 
-  def calculate_price(price_per_day)
-    total_days * price_per_day
+  def total_price(price_per_day)
+    total_days * bike.price_per_day
   end
-
-
 end

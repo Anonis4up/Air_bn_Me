@@ -22,7 +22,8 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
 
-      redirect_to reservations_path, notice: 'Réservation réussie.'
+      total_price = @reservation.total_price
+      redirect_to reservations_path, notice: "Réservation réussie. Prix total : #{total_price} €"
     else
       render "bikes/show"
     end
