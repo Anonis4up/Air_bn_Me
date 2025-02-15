@@ -9,20 +9,13 @@
       </H4>
       </p>
 
-  <%= simple_form_for [@bike, @bookmark], do |f| %>
-    <%= f.label :commentaire %>
-    <%= f.text_field :comment %>
-
-    <%= f.submit "Valide ton commentaire", class: "btn btn-primary" %>
-  <% end %>
-
-
 
   <%= simple_form_for [@bike, @reservation], html: { data: { controller: 'faltpickr' }}  do |f| %>
     <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
     <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
     <%= f.submit %>
   <% end %>
+
 
 
     <p><%= link_to "Revenir à la liste des wagons", bikes_path %></p>
