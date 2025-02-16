@@ -8,6 +8,7 @@ require "date"
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 Reservation.destroy_all
 Bike.destroy_all
 User.destroy_all
@@ -35,7 +36,7 @@ Bike.create!(
   category: "VTT",
   price_per_day: 70,
   user: user_1,
-  poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
+  poster_url: "https://res.cloudinary.com/dxula997i/image/upload/v1739114354/wagon1.jpg",
   location: user_1.address
 )
 
@@ -116,7 +117,7 @@ bike = Bike.create!(
   category: "velo de campagne",
   price_per_day: 140,
   user: user_1,
-  poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
+  poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/wagon1.jpg",
   location: user_1.address
 )
 

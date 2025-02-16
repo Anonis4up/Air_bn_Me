@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-
   def new
     @bookmark = Bookmark.new
   end
@@ -19,5 +18,4 @@ class BookmarksController < ApplicationController
   def destroy
 
   end
-
 end

@@ -5,8 +5,6 @@ class ReservationsController < ApplicationController
   def index
     @reservation = current_user.reservations
     @reservations = @reservation.all
-
-
   end
 
   def new
@@ -50,15 +48,10 @@ class ReservationsController < ApplicationController
   private
 
     def set_bike
-      @bike=Bike.find(params[:bike_id])
+      @bike = Bike.find(params[:bike_id])
     end
 
     def reservation_params
       params.require(:reservation).permit(:start_date, :end_date)
     end
-
-
-
-
-
 end
