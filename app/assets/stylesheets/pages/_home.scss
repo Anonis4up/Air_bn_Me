@@ -1,2 +1,80 @@
 // Specific CSS for your home-page
 .card{ width: 400px}
+
+// .banner{
+//   background-image: url(https://res.cloudinary.com/dszuzvkcb/image/upload/v1739737525/Cheminots_du_PLM_xeiaii.jpg);
+//   background-size: contain;
+// }
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  width: 100;
+}
+
+
+.card-product {
+  overflow: hidden;
+  height: 500px;
+  background: rgb(46, 46, 46);
+
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40xp;
+}
+
+.card-product img {
+  height: 70%;
+  width: 1000px;
+  object-fit: cover;
+  display: flex;
+  background: rgba(45, 45, 45, 0.7);
+}
+
+.card-product h2 {
+  font-family: "Oswald", serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(247, 246, 246);
+  margin: 0;
+}
+
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+
+
+#carouselExampleControls {
+  max-width: 60px;
+  margin: auto;
+}
+
+.carousel-inner img {
+  height: 800px;
+  object-fit: cover;
+}
+
+.btn-ghost {
+  color: #e8e8e8;
+  border: 1px solid #cacaca;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}

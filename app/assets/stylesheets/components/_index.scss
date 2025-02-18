@@ -3,3 +3,21 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import url("components/avatar.css");
+@import url("components/container.css");
+@import url("components/button.css");
+
+.card{
+  width: 400px;
+  background-color: rgb(214, 214, 214);
+  border-radius: 4px;
+  color:black;
+  margin-right: 4px;
+}
+
+.card:hover{
+
+  box-shadow: 0 4 4 8 rgba(0, 0, 0, 0.2) ;
+  border-color: gold;
+  transform: translateY(-10px );
+}

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/index'
   get 'reservations/create'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :reservations, only: [:index, :destroy]
 
-  root to: "bikes#index"
+  root to: "pages#home"
   # Defines the root path route ("/")
   # root "posts#index"
 end

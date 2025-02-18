@@ -13,4 +13,12 @@ class Bike < ApplicationRecord
   def address
     user&.address
   end
+
+  def total_days
+    (end_date - start_date).to_i + 1
+  end
+
+  def total_price
+    total_days * bike.price_per_day
+  end
 end
