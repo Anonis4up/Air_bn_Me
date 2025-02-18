@@ -1,16 +1,16 @@
-<body class="fibre-carbone-background">
+
   <div class="container">
-    <H1 class="text-center text-white fw-bold text-capitalize mt-1 ">Tous nos wagons</H1>
+    <H1 class="text-center text-white fw-bold text-capitalize mt-4 mb-4 ">Tous nos wagons</H1>
+</div>
 
 
-
-    <div class="container col-sm-12">
-
-      <div class="row g-3">
+  <div class="banner col-12 ">
+    <div class="row g-3">
+      <div class="col-7 mx-5">
         <% @bikes.each do |bike| %>
-            <div class="card mb-4" style="width: 18rem;">
+            <div class="card mb-4 d-inline-flex " style="width: 18rem;">
               <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
-              <div class="card-body">
+              <div class="card-body ">
                 <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
                 <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
                 <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
@@ -23,13 +23,23 @@
         <% end %>
       </div>
 
-    </div>
-  </div>
-</body>
+      <div class="col-4 ">
 
-<% @markers.map  %>
-<div style="width: 30%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class= mx style="width: 120%; height: 500px; "
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+      <div class= "my-5">
+        <H3> Tu souhaites reserver ce wagon et en vérifier sa disponibilité, </H3>
+        <H4> Selectionne la date de début et de fin</H4>
+          <%= simple_form_for "/", html: { data: { controller: 'faltpickr' }}  do |f| %>
+          <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
+          <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
+          <%= f.submit "valider"%>
+          <% end %>
+      </div>
+    </div>
+    </div>
 </div>

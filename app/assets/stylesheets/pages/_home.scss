@@ -5,7 +5,10 @@
 //   background-image: url(https://res.cloudinary.com/dszuzvkcb/image/upload/v1739737525/Cheminots_du_PLM_xeiaii.jpg);
 //   background-size: contain;
 // }
-
+.fibre-carbone-background {
+  background-image: url( "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739737525/Cheminots_du_PLM_xeiaii.jpg");
+  background-size: contain;
+}
 .flexbox {
   display: flex;
   flex-direction: column;
@@ -77,4 +80,11 @@
 
 .btn-ghost:hover {
   opacity: 1;
+  border: 1px solid #cacaca;
+}
+
+.box{
+  height: 600px;
+  opacity: 0.9;
+  overflow-y: scroll;
 }
