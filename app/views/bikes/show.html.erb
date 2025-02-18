@@ -16,11 +16,10 @@
   <%= simple_form_for [@bike, @reservation], html: { data: { controller: 'faltpickr' }}  do |f| %>
     <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
     <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
-    <%= f.submit %>
+    <p class="btn btn-ghost"<%= f.submit "valider"%>> Valider</p>
   <% end %>
 
   </div>
-
 
 
     <p><%= link_to "Revenir à la liste des wagons", bikes_path %></p>

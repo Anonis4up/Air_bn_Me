@@ -1,24 +1,32 @@
+<div class="container container-fond">
+
 <H1> Loue ton Wagon !</H1>
 
 <p> Afin de pouvoir mettre ton wagon en location, il te suffit de compléter les champs ci dessous et de cliquer sur "VALIDER" </p>
 
 <%= simple_form_for @bike do |f| %>
-  <%= f.label :Nom %>
-  <%= f.text_field :brand %>
-  <%= f.label :Categorie %>
-  <%= f.text_field :category %>
-  <%= f.label :Prix_par_jour %>
-  <%= f.text_field :price_per_day %>
-  <%= f.label :Code_postal %>
-  <%= f.text_field :location %>
-  <%= f.input :photo, as: :file %>
+  <p class= "champs my-2" ><%= f.label :Nom %>
+  <%= f.text_field :brand %></p>
+
+  <p class= "champs my-2 " ><%= f.label :Categorie %>
+  <%= f.text_field :category %></p>
+
+  <p class= "champs my-2" ><%= f.label :Prix_par_jour %>
+  <%= f.text_field :price_per_day %></p>
+
+  <p class= "champs my-2" ><%= f.label :Code_postal %>
+  <%= f.text_field :location %></p>
+
+<%= f.input :photo, as: :file %>
 
 
-  <%= f.submit "Valider", class: "btn btn-primary" %>
+  <%= f.submit "Valider", class: "btn btn-ghost" %>
 
 
 <% end %>
 
 
 
-<p><%= link_to "Revenir à la liste des wagons", bikes_path %></p>
+<p class= "btn btn-ghost" ><%= link_to "Revenir à la liste des wagons", bikes_path %></p>
+
+</div>

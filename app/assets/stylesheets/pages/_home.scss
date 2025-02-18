@@ -8,6 +8,7 @@
 .fibre-carbone-background {
   background-image: url( "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739737525/Cheminots_du_PLM_xeiaii.jpg");
   background-size: contain;
+  color: white;
 }
 .flexbox {
   display: flex;
@@ -69,22 +70,62 @@
 }
 
 .btn-ghost {
-  color: #e8e8e8;
-  border: 1px solid #cacaca;
+  color: #3f3f3f;
+  border: 2px solid #222222;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  background-color: #fafafa;
+
 }
 
 .btn-ghost:hover {
   opacity: 1;
-  border: 1px solid #cacaca;
+  border: 1px solid #221010;
+  background-color: #222222;
 }
 
 .box{
   height: 600px;
-  opacity: 0.9;
+  opacity: 0.95;
   overflow-y: scroll;
+}
+
+.container-fond{
+background-color: rgb(48, 48, 48);
+opacity: 0.9;
+height: 1000px;
+border-radius: 7px;
+font-size: 24px ;
+}
+
+.pub{
+justify-content: center;
+border-radius: 10px;
+}
+.champs {
+  color: #221010;
+  border: 2px solid #222222;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 1;
+  border: 1px solid #221010;
+  background-color: #fafafa;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
