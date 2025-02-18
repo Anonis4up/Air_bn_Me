@@ -1,2 +1,13 @@
 // Specific CSS for your home-page
-.card{ width: 400px}
+.card {
+  width: 400px;
+}
+
+.fibre-carbone-background {
+  background: linear-gradient(45deg, #3a3a3a 25%, transparent 25%) -50px 0,
+              linear-gradient(45deg, #3a3a3a 25%, transparent 25%) 0 0,
+              linear-gradient(45deg, #3a3a3a 25%, transparent 25%) 50px 0,
+              linear-gradient(45deg, #3a3a3a 25%, transparent 25%) 100px 0;
+  background-size: 100px 100px;
+  background-color: #1e1e1e;
+}

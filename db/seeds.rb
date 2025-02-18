@@ -31,81 +31,81 @@ user_2 = User.create!(
   password: "123456"
 )
 
-Bike.create!(
+bike_b1 = Bike.create!(
   brand: "Shimano",
-  category: "VTT",
+  category: "Wagon de fête",
   price_per_day: 70,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dxula997i/image/upload/v1739114354/wagon1.jpg",
   location: user_1.address
 )
 
-Bike.create!(
+bike_b2 = Bike.create!(
   brand: "Peugeot",
-  category: "VTT",
+  category: "Wagon de fête",
   price_per_day: 70,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
   location: user_2.address
 )
 
-Bike.create!(
+bike_b3 = Bike.create!(
   brand: "Canyon",
-  category: "Velo de course",
+  category: "Wagon de course",
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg",
   location: user_2.address
 )
 
-Bike.create!(
+bike_b4 = Bike.create!(
   brand: "Woom",
-  category: "VTT",
+  category: "Wagon de fête",
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/essai-motto-two-0002_w1vprh.jpg",
   location: user_2.address
 )
 
-Bike.create!(
+bike_b5 = Bike.create!(
   brand: "Woom",
-  category: "velo de campagne",
+  category: "Wagon agricole",
   price_per_day: 100,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
   location: user_1.address
 )
 
-Bike.create!(
+bike_b6 = Bike.create!(
   brand: "Peugeot",
-  category: "Velo de course",
+  category: "Wagon de course",
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/ dszuzvkcb/image/upload/ v1739114354/essai-motto-two-0002-w1vpr.jpg",
   location: user_2.address
 )
 
-Bike.create!(
+bike_b7 = Bike.create!(
   brand: "Woom",
-  category: "Velo electrique",
+  category: "Wagon hybride",
   price_per_day: 120,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg",
   location: user_2.address
 )
 
-Bike.create!(
+bike_b8 = Bike.create!(
   brand: "Peugeot",
-  category: "Velo electrique",
+  category: "Wagon hybride",
   price_per_day: 150,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114353/009ddb95a39af61c123188d2fae321aee26171ea_cizubv.jpg",
   location: user_1.address
 )
 
-Bike.create!(
+bike_b9 = Bike.create!(
   brand: "Shimano",
-  category: "velo de campagne",
+  category: "Wagon agricole",
   price_per_day: 50,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/beach-bikes-velo-confort-bbike-ile-de-re-la-couarde-scaled_l0roc4.jpg",
@@ -114,7 +114,7 @@ Bike.create!(
 
 bike = Bike.create!(
   brand: "Woom",
-  category: "velo de campagne",
+  category: "Wagon agricole",
   price_per_day: 140,
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739114354/wagon1.jpg",

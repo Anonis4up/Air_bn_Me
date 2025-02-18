@@ -1,26 +1,30 @@
-<H1>Tous nos wagons</H1>
-<div>
-  <ul>
-  <% @bikes.each do |bike| %>
-    <li class="card" heigth=400px >
-      <div class="btn btn-warning">
-       <%= link_to "Voir ce wagon", bike_path(bike) %>
+<body class="fibre-carbone-background">
+  <div class="container">
+    <H1 class="text-center text-white fw-bold text-capitalize mt-1 ">Tous nos wagons</H1>
+
+    <div class="d-flex justify-content-end mx-4">
+      <%= link_to "Loue ton wagon", new_bike_path, class: "mb-5 btn btn-primary" %> <br>
+    </div>
+
+    <div class="container col-sm-12">
+
+      <div class="row g-3">
+        <% @bikes.each do |bike| %>
+            <div class="card  m-auto mb-4" style="width: 18rem;">
+              <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
+                <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
+                <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
+                <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-info" %>
+              </div>
+            </div>
+        <% end %>
       </div>
-      <%= bike.brand %>
-      <p> Catégorie :
-        <%= bike.category %>
 
-      </p>
-      <img src="<%= bike.poster_url %>", alt= "un wagon", width=100px>
-      <p>
-      <%= bike.price_per_day %>€ par jour
-      </p>
-      <p>posté par: <%= bike.user.first_name %> </p>
-
-    </li>
-  <% end %>
-  </ul>
-
-    <%= link_to "Loue ton wagon", new_bike_path %>
-  <H1></H1>
-</div>
+    </div>
+  </div>
+</body>
