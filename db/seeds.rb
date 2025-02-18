@@ -152,7 +152,14 @@ bike = Bike.create!(
   poster_url: " https://res.cloudinary.com/dszuzvkcb/image/upload/v1739718796/Russian_Gendarmes_1890_na7ikl.jpg",
   location: user_1.address
 )
-
+bike = Bike.create!(
+  brand: "Wagon Cab",
+  category: "Wagon Train",
+  price_per_day: 140,
+  user: user_4,
+  poster_url: " https://res.cloudinary.com/dszuzvkcb/image/upload/v1739718794/Draisine_Tatra15-52_lzvjds.jpg",
+  location: user_1.address
+)
 Reservation.create(
   start_date: Date.today,
   end_date: Date.today + 1,
