@@ -1,2 +1,45 @@
-<h1>Reservations#create</h1>
-<p>Find me in app/views/reservations/create.html.erb</p>
+    <p><%= link_to "Revenir à la liste des wagons", bikes_path, class: "btn btn-ghost mx-5 my-5"  %></p>
+  <div class="banner col-12 ">
+    <div class="row g-3">
+      <div class=" container container-fond col-8 ">
+        <div class= "col-4 " >
+<H1> Réserve un wagon </H1>
+<h1><Strong> <%= @bike.brand %> </Strong> proposé par <%= @bike.user.first_name %> </H1>
+<H3> Pour <%= @bike.price_per_day  %>€ par jour</H3>
+
+
+      <img src="<%= @bike.poster_url %>", alt= "un wagon", width=600px>
+      <p>
+      <H4> Catégorie :
+        <%= @bike.category %>
+      </H4>
+      </p>
+      </div>
+<div class= "col-3 ">
+<p>Salut</p>
+</div>
+    <div style="width: 60%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
+
+<div class="container  container-fond col-3 " style="height: 550px;">
+
+  <div class= "my-5 card2" style="width: 120%;">
+    <H3> Tu souhaites reserver ce wagon et en vérifier sa disponibilité, </H3>
+    <H4> Selectionne la date de début et de fin</H4>
+  <%= simple_form_for [@bike, @reservation], url:bike_reservations_path(@bike), html: { data: { controller: 'faltpickr' }}  do |f| %>
+    <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
+    <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
+        <%= f.submit "Valider", class: "btn btn-ghost" %>
+  <% end %>
+  </div>
+   </div>
+
+
+</div>
+  </div>
+
+  </div>
