@@ -37,7 +37,7 @@
           <%= simple_form_for "/", html: { data: { controller: 'faltpickr' }}  do |f| %>
           <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
           <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
-          <p class="btn btn-ghost"<%= f.submit "valider"%> > Valider</p>
+          <%= f.submit "Valider", class: "btn btn-ghost" %>
           <% end %>
       </div>
     </div>
