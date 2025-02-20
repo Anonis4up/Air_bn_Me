@@ -1,5 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <div class="container-fluid">
+
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
@@ -7,21 +9,24 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class=font>
 
-    <p>Air Bn mE</p>
+    <div class="font align-items-b">
 
-    <H2>Ton site de location de Wagons</H2>
+      <p>Air Bn mE</p>
+      <H2>Ton site de location de Wagons</H2>
 
     </div>
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <ul class="navbar-nav me-auto">
+
         <% if user_signed_in? %>
           <li class="nav-item active">
 
           </li>
+
           <li class="nav-item dropdown">
           <a href="" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
@@ -38,7 +43,11 @@
             <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+
       </ul>
+
     </div>
+
   </div>
+
 </div>

@@ -1,27 +1,29 @@
 // Specific CSS for your home-page
-.card{ width: 400px}
-.card2{
+.card { width: 400px}
+
+.card2 {
   width: 600px;
   height: 500px;
   align-items: center;
   background-size: contain;
 }
 
-.mback{
+.mback {
   background-image: url(https://res.cloudinary.com/dszuzvkcb/image/upload/v1739737525/Cheminots_du_PLM_xeiaii.jpg);
   background-size: contain;
 }
+
 .fibre-carbone-background {
   background-image: url( "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739737525/Cheminots_du_PLM_xeiaii.jpg");
   background-size: contain;
   color: white;
 }
+
 .flexbox {
   display: flex;
   flex-direction: column;
   width: 100;
 }
-
 
 .card-product {
   overflow: hidden;
@@ -50,7 +52,6 @@
   margin: 0;
 }
 
-
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -62,8 +63,6 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
-
-
 
 #carouselExampleControls {
   max-width: 70%;
@@ -95,25 +94,26 @@
   color: white;
 }
 
-.box{
+.box {
   height: 600px;
   opacity: 0.95;
   overflow-y: scroll;
 }
 
-.container-fond{
-color: rgb(248, 248, 248);
-background-color: rgb(48, 48, 48);
-opacity: 0.9;
-height: 1100px;
-border-radius: 7px;
-font-size: 24px ;
+.container-fond {
+  color: rgb(248, 248, 248);
+  background-color: rgb(48, 48, 48);
+  opacity: 0.9;
+  height: 1100px;
+  border-radius: 7px;
+  font-size: 24px ;
 }
 
-.pub{
-justify-content: center;
-border-radius: 10px;
+.pub {
+  justify-content: center;
+  border-radius: 10px;
 }
+
 .champs {
   color: #221010;
   border: 2px solid #222222;

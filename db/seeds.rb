@@ -40,7 +40,7 @@ user_3 = User.create!(
 
 user_4 = User.create!(
   email: "Jean3@jean.jean",
-  first_name: "Le controlleur de la dernere fois",
+  first_name: "Le contrôleur de la dernière fois",
   last_name: "Jeanjeanne",
   phone_number: "0606060606",
   address: "1 place Jean Moulin, 94140 Maison Alfort",

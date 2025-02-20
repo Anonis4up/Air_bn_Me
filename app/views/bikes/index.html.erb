@@ -1,31 +1,30 @@
-
-  <div class="container">
-    <H1 class="text-center text-white fw-bold text-capitalize mt-4 mb-4 ">Tous nos wagons</H1>
+<div class="container">
+  <H1 class="text-center text-white fw-bold text-capitalize mt-4 mb-4 ">Tous nos wagons</H1>
 </div>
 
 
-  <div class="banner col-12  ">
-    <div class="row g-3">
-      <div class="col-8 margin:20px;">
-        <div class="mx-1">
-        <% @bikes.each do |bike| %>
-            <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
-              <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
-              <div class="card-body ">
-                <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
-                <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
-                <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
-                <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
-              </div>
-              <div class="card-footer d-flex justify-content-center">
-                <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-ghost" %>
-              </div>
+<div class="banner col-12  ">
+  <div class="row g-3">
+    <div class="col-8 margin:20px;">
+      <div class="mx-1">
+      <% @bikes.each do |bike| %>
+          <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
+            <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
+            <div class="card-body ">
+              <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
+              <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
+              <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
+              <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
             </div>
-        <% end %>
-        </div>
+            <div class="card-footer d-flex justify-content-center">
+              <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-ghost" %>
+            </div>
+          </div>
+      <% end %>
       </div>
+    </div>
 
-<div class="container container-fond col-4 ">
+    <div class="container container-fond col-4">
 
       <div class= "mx my-5 card2" style="width: 100%; height: 500px; "
         data-controller="map"
@@ -43,5 +42,5 @@
           <% end %>
       </div>
     </div>
-    </div>
+  </div>
 </div>
