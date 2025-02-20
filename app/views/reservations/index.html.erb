@@ -1,6 +1,22 @@
 <div class="container container-fond position-relative">
-<br><br>
-  <h1 class="text-center fs-2">Réservations</h1> <br>
+  <br><br>
+  <h1 class="text-center fs-2">Réservations</h1><br>
+
+  <% if @reservation && @reservation.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if flash[:notice] %>
+
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
   <% if @reservations.any? %>
     <p class="text-center"> Vous avez réservé
       <%= @reservations.last.bike.brand %> du
@@ -9,7 +25,6 @@
       <%= @reservations.last.bike.user.first_name %>. <br><br>
       <img src="<%= @reservations.last.bike.poster_url %>" alt="un vélo" width="500px" height="300px" style="justify-content-center">
     </p>
-
 
     <p class="text-center fw-bolder fs-2 "> <br>
       Prix total : <%= @reservations.last.total_price %> € pour <%= @reservations.last.total_days %> jours

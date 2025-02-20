@@ -7,12 +7,11 @@
     <div class="card-body">
 
       <div class="row">
-        <!-- Texte à gauche -->
         <div class="col-4">
 
           <div class="mb-5">
             <H1> Réserve un wagon </H1>
-            <h1><Strong> <%= @bike.brand %> </Strong> proposé par <%= @bike.user.first_name %> </H1>
+            <h1><Strong> <%= @bike.brand %> </Strong> proposé par <%= @bike.user.first_name %> </h1>
             <H3> Pour <%= @bike.price_per_day  %>€ par jour</H3>
             <p>
             <H4> Catégorie :
@@ -20,7 +19,7 @@
             </H4>
           </div>
 
-          <div class="margin: 50px">
+          <div style="margin: 50px;">
             <p>Ce wagon se situe actuellement: <%= @bike.user.address %></p>
             <div style="width: 100%; height: 600px; "
               data-controller="map"
@@ -29,10 +28,9 @@
           </div>
 
         </div>
-        <!-- Image à droite -->
         <div class="col-4">
 
-          <img src="<%= @bike.poster_url %>", alt= "un wagon", width=600px class="card-img-top" alt="Image" style="width: 100%; height: auto;">
+          <img src="<%= @bike.poster_url %>", alt="un wagon", width=600px class="card-img-top" alt="Image" style="width: 100%; height: auto;">
           <H1 class="my-5">Bienvenue à bord de notre wagon de luxe !</H1>
           <ul>
             <li>Wi-Fi ultra-rapide</li>
@@ -47,13 +45,24 @@
 
         <div class="container container-fond col-3" style="height: 550px;">
 
-          <div class= "my-5 card2" style="width: 120%;">
-            <H3> Tu souhaites reserver ce wagon et en vérifier sa disponibilité, </H3>
-            <H4> Selectionne la date de début et de fin</H4>
-            <%= simple_form_for [@bike, @reservation], url:bike_reservations_path(@bike), html: { data: { controller: 'faltpickr' }}  do |f| %>
-            <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
-            <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
-            <%= f.submit "Valider", class: "btn btn-ghost" %>
+          <% if @reservation && @reservation.errors.any? %>
+            <div class="alert alert-danger">
+              <ul>
+                <% @reservation.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="my-5 card2" style="width: 120%;">
+            <h3>Tu souhaites réserver ce wagon et en vérifier sa disponibilité,</h3>
+            <h4>Selectionne la date de début et de fin</h4>
+
+            <%= simple_form_for [@bike, @reservation], url: bike_reservations_path(@bike), html: { data: { controller: 'faltpickr' }} do |f| %>
+              <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
+              <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
+              <%= f.submit "Valider", class: "btn btn-ghost" %>
             <% end %>
           </div>
 
