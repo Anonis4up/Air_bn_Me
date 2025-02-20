@@ -104,7 +104,7 @@
   color: rgb(248, 248, 248);
   background-color: rgb(48, 48, 48);
   opacity: 0.9;
-  height: 1100px;
+  height: 1180px;
   border-radius: 7px;
   font-size: 24px ;
 }
@@ -137,4 +137,12 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: transparent;
 }

@@ -21,18 +21,16 @@
     <p class="text-center"> Vous avez réservé
       <%= @reservations.last.bike.brand %> du
       <%= @reservations.last.start_date %> au
-      <%= @reservations.last.end_date %>. Ce wagon vous est mis à disposition par <br>
-      <%= @reservations.last.bike.user.first_name %>. <br><br>
-      <img src="<%= @reservations.last.bike.poster_url %>" alt="un vélo" width="500px" height="300px" style="justify-content-center">
+      <%= @reservations.last.end_date %>. Ce wagon vous est mis à disposition par<br>
+      <%= @reservations.last.bike.user.first_name %>.<br><br>
+      <img src="<%= @reservations.last.bike.poster_url %>" alt="un vélo" width="600px" height="500px" style="justify-content-center">
     </p>
 
     <p class="text-center fw-bolder fs-2 "> <br>
-      Prix total : <%= @reservations.last.total_price %> € pour <%= @reservations.last.total_days %> jours
+      Prix total : <%= format("%.2f", @reservations.last.total_price) %> € pour <%= @reservations.last.total_days %> jours
     </p>
 
-    <br><br><br>
-    <br><br><br>
-    <h1 class="text-center"> Merci d'avoir choisi Air Bn Me !</h1>
+    <br><br><h1 class="text-center"> Toute l'équipe d'Air Bn Me vous remercie pour votre réservation ! 💕</h1>
 
   <% else %>
     <p>Aucune réservation trouvée.</p>
