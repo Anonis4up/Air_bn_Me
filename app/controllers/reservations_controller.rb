@@ -30,13 +30,6 @@ class ReservationsController < ApplicationController
 
   private
 
-  def reservation_conflict?
-    existing_reservation = Reservation.where(bike_id: @bike.id)
-                                      .where.not(id: @reservation.id)
-                                      .where("start_date < ? AND end_date > ?", @reservation.end_date, @reservation.start_date)
-    existing_reservation.exists?
-  end
-
   def set_bike
     @bike = Bike.find(params[:bike_id])
   end
