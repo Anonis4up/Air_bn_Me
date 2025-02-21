@@ -37,21 +37,6 @@
 
 
 
-
-
-  <% if flash[:notice] %>
-
-
-
-
-
-  <div class="notice"><%= flash[:notice] %></div>
-
-
-<% end %>
-
-
-
   <% if @reservations.any? %>
     <p class="text-center"> Vous avez réservé
       <%= @reservations.last.bike.brand %> du
