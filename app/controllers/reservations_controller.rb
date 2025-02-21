@@ -18,16 +18,11 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       total_price = @reservation.total_price
-      redirect_to reservations_path, notice: "Réservation réussie. Prix total : #{total_price} €"
+      redirect_to reservations_path
     else
       flash[:notice] = "Période indisponible"
       render "bikes/show"
     end
-
-    #if reservation_conflict?
-     # @reservation.errors.add(:base, "Période déjà réservée")
-      #render "bikes/show" and return
-    #end
   end
 
   private
