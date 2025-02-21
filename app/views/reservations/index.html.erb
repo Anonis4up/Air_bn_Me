@@ -7,36 +7,6 @@
 
 
 
-
-
-  <% if @reservation && @reservation.errors.any? %>
-
-
-    <div class="alert alert-danger">
-
-
-      <ul>
-
-
-        <% @reservation.errors.full_messages.each do |message| %>
-
-
-          <li><%= message %></li>
-
-
-        <% end %>
-
-
-      </ul>
-
-
-    </div>
-
-
-  <% end %>
-
-
-
   <% if @reservations.any? %>
     <p class="text-center"> Vous avez réservé
       <%= @reservations.last.bike.brand %> du
