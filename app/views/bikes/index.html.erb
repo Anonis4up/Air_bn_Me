@@ -33,14 +33,14 @@
 
     <div class="container container-fond col-4"> <br>
       <%# button search %>
+        <div class="col-12 champs text-dark">
+          <div class="col-11">
       <%= simple_form_for "Saisie ton adresse" do |f| %>
 
-        <div class="col-12">
 
           <div data-controller="address-autocomplete" data-address-autocomplete-target="address"
-          data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>" class="champs">
+          data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>" >
 
-          <div class="col-6">
 
               <div class="col-6">
 
