@@ -4,6 +4,7 @@
    <h1 class="text-center fs-2">Réservations</h1><br>
 
       <% if @reservations.any? %>
+  
     <p class="text-center"> Vous avez réservé
       <%= @reservations.last.bike.brand %> du
       <%= @reservations.last.start_date %> au
