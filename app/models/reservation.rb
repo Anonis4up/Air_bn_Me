@@ -14,16 +14,15 @@ class Reservation < ApplicationRecord
     total_days * bike.price_per_day
   end
 
+    private
 
-  private
+    def check_reservation_conflict
+      conflicts = Reservation.where(bike_id: bike_id)
+                              .where.not(id: id)
+                              .where("start_date < ? AND end_date > ?", end_date, start_date)
 
-  def check_reservation_conflict
-    conflicts = Reservation.where(bike_id: bike_id)
-                            .where.not(id: id)
-                            .where("start_date < ? AND end_date > ?", end_date, start_date)
-
-    if conflicts.exists?
-      errors.add(:base, "Période déjà réservée")
-    end
+      if conflicts.exists?
+        errors.add(:base, "Période déjà réservée")
+      end
   end
 end
