@@ -1,0 +1,15 @@
+<%= form_for([@bike, @review]) do |f| %>
+  <div class="form-group">
+    <%= f.label :comment, "Votre avis", class: 'form-label text-dark' %>
+    <%= f.text_area :comment, class: 'form-control', rows: 4 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rating, "Évaluation (0-5)", class: 'form-label text-dark' %>
+    <%= f.select :rating, [0, 1, 2, 3, 4, 5], {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Soumettre l'avis", class: "btn btn-ghost mx-5 my-5" %>
+  </div>
+<% end %>
