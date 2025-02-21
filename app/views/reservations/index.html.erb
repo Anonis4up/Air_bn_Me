@@ -1,21 +1,56 @@
 <div class="container container-fond position-relative">
-  <br><br>
+    <br><br>
+
+
+
   <h1 class="text-center fs-2">Réservations</h1><br>
 
+
+
+
+
   <% if @reservation && @reservation.errors.any? %>
+
+
     <div class="alert alert-danger">
+
+
       <ul>
+
+
         <% @reservation.errors.full_messages.each do |message| %>
+
+
           <li><%= message %></li>
+
+
         <% end %>
+
+
       </ul>
+
+
     </div>
+
+
   <% end %>
+
+
+
+
 
   <% if flash[:notice] %>
 
+
+
+
+
   <div class="notice"><%= flash[:notice] %></div>
+
+
 <% end %>
+
+
 
   <% if @reservations.any? %>
     <p class="text-center"> Vous avez réservé
