@@ -10,20 +10,24 @@
 
       <div class="mx-1">
 
-        <% @bikes.each do |bike| %>
-          <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
-            <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
-            <div class="card-body ">
-              <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
-              <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
-              <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
-              <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-ghost" %>
-            </div>
-          </div>
-        <% end %>
+       <% @bikes.each do |bike| %>
+  <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
+    <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
+    <div class="card-body ">
+      <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
+      <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
+      <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
+      <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
+    </div>
+    <div class="card-footer d-flex justify-content-center">
+      <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-ghost me-2" %>
+     <% if current_user == bike.user %>
+  <%= link_to "Supprimer", bike_path(bike), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce wagon ?" }, class: "text-center btn btn-ghost me-2" %>
+<% end %>
+    </div>
+  </div>
+<% end %>
+
 
       </div>
 
