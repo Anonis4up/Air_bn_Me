@@ -16,7 +16,7 @@
     <div class="card-body ">
       <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
       <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
-      <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
+      <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day.to_i %>€ par jour</p>
       <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
     </div>
     <div class="card-footer d-flex justify-content-center">
