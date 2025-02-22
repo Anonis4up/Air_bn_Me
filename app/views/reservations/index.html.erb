@@ -1,10 +1,12 @@
+<p><%= link_to "Revenir à la liste des wagons", bikes_path, class: "btn btn-ghost mx-5 my-2"  %></p>
+
 <div class="container container-fond position-relative">
     <br><br>
 
    <h1 class="text-center fs-2">Réservations</h1><br>
 
       <% if @reservations.any? %>
-  
+
     <p class="text-center"> Vous avez réservé
       <%= @reservations.last.bike.brand %> du
       <%= @reservations.last.start_date %> au
