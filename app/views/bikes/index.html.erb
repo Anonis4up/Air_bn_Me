@@ -22,8 +22,8 @@
     <div class="card-footer d-flex justify-content-center">
       <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-ghost me-2" %>
      <% if current_user == bike.user %>
-  <%= link_to "Supprimer", bike_path(bike), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce wagon ?" }, class: "text-center btn btn-ghost me-2" %>
-<% end %>
+        <%= link_to "Supprimer", bike_path(bike), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce wagon ?" }, class: "text-center btn btn-ghost me-2" %>
+      <% end %>
     </div>
   </div>
 <% end %>
