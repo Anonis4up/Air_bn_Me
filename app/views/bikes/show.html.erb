@@ -8,7 +8,7 @@
         <div class="mb-5">
 <H1> Réserve un wagon </H1>
 <h1><Strong> <%= @bike.brand %> </Strong> proposé par <%= @bike.user.first_name %> </H1>
-<H3> Pour <%= @bike.price_per_day  %>€ par jour</H3>
+<H3> Pour <%= @bike.price_per_day.to_i  %>€ par jour</H3>
       <p>
       <H4> Catégorie :
         <%= @bike.category %>
