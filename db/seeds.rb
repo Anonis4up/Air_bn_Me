@@ -70,11 +70,20 @@ Bike.create!(
   user: user_1,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739718798/MjAyMjA2MjA1ZTFjNGEyM2JmNzFkNzNjZmZjOTA0ZGM5MWVkZmY_xusxlj.jpg",
   location: user_1.address
-)
+  )
 
-Bike.create!(
-  brand: "Le Elgin",
-  category: "Wagon Train",
+  Bike.create!(
+    brand: "MetroGIMS",
+    category: "Wagon Ultra Velocité",
+    price_per_day: 150,
+    user: user_1,
+    poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1740238692/metrogims_rlxtsl.jpg ",
+    location: user_1.address
+  )
+
+  Bike.create!(
+    brand: "Le Elgin",
+    category: "Wagon Train",
   price_per_day: 70,
   user: user_2,
   poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739718797/Capture_d_%C3%A9cran_2025-02-16_160458_t9pt79.jpg",
@@ -126,14 +135,6 @@ Bike.create!(
   location: user_2.address
 )
 
-Bike.create!(
-  brand: "Wa-Wagon",
-  category: "Wagon Ultra Velocité",
-  price_per_day: 150,
-  user: user_1,
-  poster_url: "https://res.cloudinary.com/dszuzvkcb/image/upload/v1739718791/71E9GqfLwdL_c5znmh.jpg ",
-  location: user_1.address
-)
 
 Bike.create!(
   brand: "SNCE Scénic 0p",
