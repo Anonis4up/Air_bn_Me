@@ -46,8 +46,22 @@ class BikesController < ApplicationController
 
   private
 
+
+  uploaded_file = params[:bike][:poster_url]
+
+if uploaded_file
+  result = Cloudinary::Uploader.upload(uploaded_file.path)
+@bike.poster_url = result['secure_url']
+end
+
+  if @bike.save
+    redirect_to bikes_path, notice: "Votre wagon est ajouté"
+  else
+    render :new
+
   def set_bike
     @bike = Bike.find(params[:id])
+
   end
 
   def check_owner
@@ -58,6 +72,6 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:brand, :category, :price_per_day, :location, :photo)
+    params.require(:bike).permit(:brand, :category, :price_per_day, :location, :poster_url)
   end
 end
