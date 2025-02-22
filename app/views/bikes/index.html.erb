@@ -1,7 +1,5 @@
 <h1 class="text-center text-white fw-bold text-capitalize mt-4 mb-4">Tous nos wagons</h1>
 
-</div>
-
 <div class="banner col-12">
 
   <div class="row g-3">
@@ -9,73 +7,81 @@
     <div class="col-8 margin:20px;">
 
       <div class="mx-1">
+        
+        <% @bikes.each do |bike| %>
 
-       <% @bikes.each do |bike| %>
-  <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
-    <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
-    <div class="card-body ">
-      <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
-      <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
-      <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day.to_i %>€ par jour</p>
-      <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
-    </div>
-    <div class="card-footer d-flex justify-content-center">
-      <%= link_to "Voir ce wagon", bike_path(bike), class: "text-center btn btn-ghost me-2" %>
-     <% if current_user == bike.user %>
-        <%= link_to "Supprimer", bike_path(bike), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce wagon ?" }, class: "text-center btn btn-ghost me-2" %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+          <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
 
+            <img src="<%= bike.poster_url %>" alt="un wagon" class="card-img-top" style="height: 250px; object-fit: cover;">
+
+            <div class="card-body ">
+
+              <h5 class="card-title text-center fw-bolder"><%= bike.brand %></h5> <br>
+              <p class="card-text text-center fw-bolder">Catégorie : <%= bike.category %></p>
+              <p class="card-text text-center fw-bolder">Prix : <%= bike.price_per_day %>€ par jour</p>
+              <p class="card-text text-center fw-bolder">Posté par : <%= bike.user.first_name %></p>
+
+            </div>
+
+            <div class="card-footer d-flex justify-content-center">
+              <%= link_to "Voir", bike_path(bike), class: "text-center btn btn-ghost me-2" %>
+              <% if current_user == bike.user %>
+                  <%= link_to "Supprimer", bike_path(bike), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce wagon ?" }, class: "text-center btn btn-ghost me-2" %>
+              <% end %>
+
+            </div>
+
+          </div>
+        <% end %>
 
       </div>
 
     </div>
 
     <div class="container container-fond col-4"> <br>
-      <%# button search %>
-        <div class="col-12 champs text-dark">
-      <%= simple_form_for "Saisie ton adresse" do |f| %>
-          <div class="col-9">
 
-          <div data-controller="address-autocomplete"  placeholder="Saisie ton adresse" data-address-autocomplete-target="address"
-          data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>" >
+      <div class="col-12 champs bg-grey text-dark">
 
-              <div class="col-3">
+        <div class="col-11 d-inline-flex justify-content-center">
 
-                <select class="form-select bg-light text-dark" aria-label="Default select example">
-                  <option selected>Dans un rayon de</option>
-                  <option value="1">10 Km</option>
-                  <option value="2">25 Km</option>
-                  <option value="3">50 Km</option>
-                  <option value="4">Plus de 50 Km</option>
-                </select>
+          <%= simple_form_for "Saisie ton adresse" do |f| %>
 
+
+              <select class="form-select bg-light text-dark" aria-label="Default select example">
+                <option selected>Dans un rayon de</option>
+                <option value="1">10 Km</option>
+                <option value="2">25 Km</option>
+                <option value="3">50 Km</option>
+                <option value="4">Plus de 50 Km</option>
+              </select>
+
+              <div data-controller="address-autocomplete" data-address-autocomplete-target="address"
+              data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
               </div>
 
-            </div>
-
-          </div>
-
+          <% end %>
         </div>
-      <% end %>
+
+      </div>
 
       <div class= "mx my-5 card2" style="width: 100%; height: 500px; "
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+      </div><br>
 
-      <div class= "my-5 card2" style="width: 120%;">
+      <h2 class="text-center"> Tu souhaites reserver ce wagon et en vérifier <br> sa disponibilité, </h2> <br>
+      <h4 class="text-center align-text-bottom"> Selectionne la date de début et de fin</h4>
 
-        <h2> Tu souhaites reserver ce wagon et en vérifier sa disponibilité, </h2>
-        <H4> Selectionne la date de début et de fin</H4>
-          <%= simple_form_for "Recherche tes dates", html: { data: { controller: 'faltpickr' }}  do |f| %>
+      <div class= "card2 d-flex justify-content-center align-items-start m-auto">
+
+        <%= simple_form_for "Recherche tes dates", html: { data: { controller: 'faltpickr' }}  do |f| %>
           <%= f.input :start_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'startDateInput' } } %>
           <%= f.input :end_date, label: false, as: :string, input_html: { class: "d-none", data: { faltpickr_target: 'endDateInput' } } %>
-          <%= f.submit "Valider", class: "btn btn-ghost" %>
-          <% end %>
+          <div>
+            <%= f.submit "Valider", class: "btn btn-ghost d-flex justify-content-center align-items-center m-auto" %>
+          </div>
+        <% end %>
 
       </div>
 
