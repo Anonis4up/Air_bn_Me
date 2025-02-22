@@ -32,10 +32,10 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
             <%= link_to "", "#", class: "nav-link" %>
           </a>
-            <div class="dropdown-menu dropdown-menu-end champs" aria-labelledby="navbarDropdown">
-              <%= link_to "Voir mes wagons", "#", class: "dropdown-item" %>
-              <%= link_to "Modifier mon profil", "#", class: "dropdown-item" %>
-              <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+              <%= link_to "Voir mes wagons", "#", class: "dropdown-item champs" %>
+              <%= link_to "Modifier mon profil", "#", class: "dropdown-item champs" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item champs" %>
             </div>
           </li>
         <% else %>
