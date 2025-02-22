@@ -7,7 +7,7 @@
     <div class="col-8 margin:20px;">
 
       <div class="mx-1">
-
+        
         <% @bikes.each do |bike| %>
 
           <div class="card mb-4 d-inline-flex " style="width: 18rem; height:550px;">
@@ -45,6 +45,7 @@
         <div class="col-11 d-inline-flex justify-content-center">
 
           <%= simple_form_for "Saisie ton adresse" do |f| %>
+
 
               <select class="form-select bg-light text-dark" aria-label="Default select example">
                 <option selected>Dans un rayon de</option>
